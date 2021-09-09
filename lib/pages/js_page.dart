@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
+import '../models/launch_page.dart';
 
 class JsPage extends StatefulWidget {
   @override
@@ -33,7 +35,7 @@ class _JsPageState extends State<JsPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    height: 30,
+                    height: 40,
                     width: 400,
                     color: Colors.teal.shade900,
                     child: Text(
@@ -54,15 +56,18 @@ class _JsPageState extends State<JsPage> {
                     height: 300,
                     width: 400,
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Container(
-                    height: 30,
-                    width: 200,
+                    height: 50,
+                    width: 250,
                     color: Colors.teal.shade900,
                     child: Row(
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              vertical: 0, horizontal: 5),
+                              vertical: 10, horizontal: 15),
                           child: Text(
                             'Web-Convector',
                             //textAlign: TextAlign.center,
@@ -75,10 +80,11 @@ class _JsPageState extends State<JsPage> {
                         ),
                         IconButton(
                           onPressed: () {
-                            // launch('https://ronaldofagundes.github.io/webConvector/'),
+                            openWebConvector();
                           },
                           icon: Icon(
-                            Icons.settings_system_daydream,
+                            Ionicons.eye_sharp,
+                            size: 30,
                             color: Colors.yellow,
                           ),
                         ),
@@ -86,22 +92,25 @@ class _JsPageState extends State<JsPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   Image.asset(
                     'assets/images/jstur.png',
                     height: 300,
                     width: 400,
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Container(
-                    height: 30,
-                    width: 200,
+                    height: 50,
+                    width: 250,
                     color: Colors.teal.shade900,
                     child: Row(
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              vertical: 0, horizontal: 15),
+                              vertical: 10, horizontal: 25),
                           child: Text(
                             'Web-Tur',
                             //textAlign: TextAlign.center,
@@ -114,10 +123,11 @@ class _JsPageState extends State<JsPage> {
                         ),
                         IconButton(
                           onPressed: () {
-//launch('https://ronaldofagundes.github.io/webTur/'),
+                            openWebTur();
                           },
                           icon: Icon(
-                            Icons.settings_system_daydream,
+                            Ionicons.eye_sharp,
+                            size: 30,
                             color: Colors.yellow,
                           ),
                         ),
@@ -125,7 +135,7 @@ class _JsPageState extends State<JsPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Image.asset(
                     'assets/images/jsnutri.png',
@@ -133,14 +143,14 @@ class _JsPageState extends State<JsPage> {
                     width: 400,
                   ),
                   Container(
-                    height: 30,
-                    width: 200,
+                    height: 50,
+                    width: 250,
                     color: Colors.teal.shade900,
                     child: Row(
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              vertical: 0, horizontal: 15),
+                              vertical: 10, horizontal: 25),
                           child: Text(
                             'Web-Nutri',
                             //textAlign: TextAlign.center,
@@ -153,10 +163,11 @@ class _JsPageState extends State<JsPage> {
                         ),
                         IconButton(
                           onPressed: () {
-                            //launch('https://ronaldofagundes.github.io/webNutri/'),
+                            openWebNutri();
                           },
                           icon: Icon(
-                            Icons.settings_system_daydream,
+                            Ionicons.eye_sharp,
+                            size: 30,
                             color: Colors.yellow,
                           ),
                         ),

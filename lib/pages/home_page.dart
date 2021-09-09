@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:my_portfolio/pages/java_page.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:ionicons/ionicons.dart';
 
+import '../models/launch_page.dart';
 import 'js_page.dart';
 import 'html_page.dart';
 import 'react_page.dart';
 import 'info_page.dart';
+import 'java_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -44,9 +45,7 @@ class _HomePageState extends State<HomePage> {
                   accountName: Text("RonaldoFagundes"),
                   accountEmail: Text("rfagundes@gmail.com"),
                   currentAccountPicture: CircleAvatar(
-                    //radius: 40,
                     backgroundColor: Colors.transparent,
-
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(80.0),
                       child: Image.asset('../assets/images/myself.jpg'),
@@ -55,15 +54,13 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               ListTile(
-                //leading: Icon(Icons.settings, color: Colors.green),
                 leading: Icon(
-                  MdiIcons.languageHtml5,
+                  Ionicons.logo_html5,
                   size: 40,
                   color: Colors.amber,
                 ),
-
                 title: Text(
-                  'Html/Css',
+                  'Html',
                   style: TextStyle(
                     fontSize: 24,
                     color: Colors.green,
@@ -80,9 +77,31 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               ListTile(
-                // leading: Icon(Icons.settings, color: Colors.green),
                 leading: Icon(
-                  MdiIcons.languageJavascript,
+                  Ionicons.logo_css3,
+                  size: 40,
+                  color: Colors.amber,
+                ),
+                title: Text(
+                  'Css',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HtmlPage(),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Ionicons.logo_javascript,
                   size: 40,
                   color: Colors.amber,
                 ),
@@ -105,7 +124,7 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 leading: Icon(
-                  MdiIcons.react,
+                  Ionicons.logo_react,
                   size: 40,
                   color: Colors.amber,
                 ),
@@ -128,7 +147,7 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 leading: Icon(
-                  MdiIcons.languageJava,
+                  Ionicons.server,
                   size: 40,
                   color: Colors.amber,
                 ),
@@ -151,7 +170,7 @@ class _HomePageState extends State<HomePage> {
               ),
               ListTile(
                 leading: Icon(
-                  MdiIcons.bikeFast,
+                  Ionicons.bicycle,
                   size: 40,
                   color: Colors.amber,
                 ),
@@ -285,96 +304,47 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.symmetric(
                           vertical: 15, horizontal: 20),
                       child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.green,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                offset: const Offset(3.0, 3.0),
-                                blurRadius: 5.0,
-                                spreadRadius: 2.0,
-                              ),
-                            ]),
                         child: IconButton(
                           onPressed: () {
-                            //   abrirWhatsApp();
+                            openWhatsApp(
+                                number: '+5521990288543', msg: 'Olá tudo bem?');
                           },
                           icon: Icon(
-                            Icons.phone,
+                            Ionicons.logo_whatsapp,
+                            size: 40,
+                            color: Colors.green,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 20),
+                      child: Container(
+                        child: IconButton(
+                          onPressed: () {
+                            openGitHub();
+                          },
+                          icon: Icon(
+                            Ionicons.logo_github,
+                            size: 40,
                             color: Colors.white,
                           ),
                         ),
                       ),
                     ),
-                    /*  Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 5, horizontal: 20),
-                      child: Container(
-                        height: 50,
-                        width: 60,
-                        color: Colors.amber,
-                        child: IconButton(
-                          onPressed: () {
-                            //abrirWhatsApp();
-                          },
-                          icon: CircleAvatar(
-                            backgroundColor: Colors.green,
-                            child: Icon(
-                              Icons.phone,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ), */
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 15, horizontal: 20),
                       child: Container(
-                        decoration: BoxDecoration(
-                            //color: Colors.grey,
-                            //shape: BoxShape.circle,
-                            boxShadow: [
-                              /* BoxShadow(
-                                offset: const Offset(3.0, 3.0),
-                                blurRadius: 5.0,
-                                spreadRadius: 2.0,
-                              ), */
-                            ]),
                         child: IconButton(
                           onPressed: () {
-                            //  abrirGitHub();
+                            openLinkedin();
                           },
                           icon: Icon(
-                            MdiIcons.github,
+                            Ionicons.logo_linkedin,
                             size: 40,
-                            color: Colors.amber,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 15, horizontal: 20),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            //color: Colors.grey,
-                            //shape: BoxShape.circle,
-                            boxShadow: [
-                              /*  BoxShadow(
-                                offset: const Offset(3.0, 3.0),
-                                blurRadius: 5.0,
-                                spreadRadius: 2.0,
-                              ), */
-                            ]),
-                        child: IconButton(
-                          onPressed: () {
-                            //abrirLinkedin();
-                          },
-                          icon: Icon(
-                            MdiIcons.linkedin,
-                            size: 40,
-                            color: Colors.amber,
+                            color: Colors.blue.shade900,
                           ),
                         ),
                       ),
@@ -389,43 +359,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-/* abrirWhatsApp() async {
-  var whatsappUrl = "whatsapp://send?phone=+5586994324465&text=Olá,tudo bem ?";
-
-  if (await canLaunch(whatsappUrl)) {
-    await launch(whatsappUrl);
-  } else {
-    throw 'Could not launch $whatsappUrl';
-  }
-} */
-
-/* abrirGitHub() async {
-  const url = 'https://flutterando.com.br/';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-} */
-
-/* abrirLinkedin() async {
-  const url = 'https://flutterando.com.br/';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
- */
-/* class MyFlutterApp {
-  MyFlutterApp._();
-  
-  static const _KFontFam = 'MyFlutterApp';
-  static const String _KFontPkg = null;
-  
-  static const IconData home = IconData (0  
-}; */
-
-
-

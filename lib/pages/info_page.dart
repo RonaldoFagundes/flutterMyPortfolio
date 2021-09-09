@@ -75,10 +75,17 @@ class _InfoPageState extends State<InfoPage> {
                       ),
                     ),
                   ),
-                  Image.asset(
-                    'assets/images/study.png',
-                    height: 400,
-                    width: 200,
+                  Container(
+                    height: 300,
+                    color: Colors.green.shade200,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset(
+                        'assets/images/study.png',
+                        height: 400,
+                        width: 180,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -86,11 +93,15 @@ class _InfoPageState extends State<InfoPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 600,
-                    width: 200,
-                    child: Image.asset(
-                      'assets/images/work.png',
-                      height: 500,
+                    height: 300,
+                    color: Colors.blue.shade200,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset(
+                        'assets/images/work.png',
+                        height: 400,
+                        width: 180,
+                      ),
                     ),
                   ),
                   Padding(
